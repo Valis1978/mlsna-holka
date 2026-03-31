@@ -17,20 +17,26 @@ export default function SeasonalBanner({
     "Lesná Pá 3.4.: 10:00–18:00 · So–Ne: 13:00–18:00 · Po 6.4.: zavřeno",
   ],
 }: SeasonalBannerProps) {
-  const [visible, setVisible] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 300);
-    return () => clearTimeout(t);
+    let lastY = 0;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setHidden(y > 80);
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) return null;
+  if (dismissed) return null;
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700 ease-out ${
-        mounted ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      className={`fixed top-0 left-0 right-0 z-[60] transition-transform duration-500 ease-out ${
+        hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
       <div className="bg-charcoal/95 backdrop-blur-md">
@@ -52,7 +58,7 @@ export default function SeasonalBanner({
           </div>
 
           <button
-            onClick={() => setVisible(false)}
+            onClick={() => setDismissed(true)}
             className="shrink-0 ml-1 w-5 h-5 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
             aria-label="Zavřít"
           >
@@ -60,7 +66,6 @@ export default function SeasonalBanner({
           </button>
         </div>
       </div>
-      {/* Subtle gold accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </div>
   );

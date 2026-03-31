@@ -26,10 +26,10 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "top-0 glass border-b border-gold-light/30 shadow-sm py-3"
-            : "top-[30px] bg-transparent py-5"
+            ? "glass border-b border-gold-light/30 shadow-sm py-3"
+            : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
