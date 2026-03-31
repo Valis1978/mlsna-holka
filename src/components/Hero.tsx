@@ -50,14 +50,16 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1
+        <div
           ref={headingRef}
-          className="will-animate font-[family-name:var(--font-heading)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-6"
+          className="will-animate mb-6 flex justify-center"
         >
-          Mlsná
-          <br />
-          <span className="italic text-gold-light">holka</span>
-        </h1>
+          <img
+            src="/images/logo-white.png"
+            alt="Mlsná holka"
+            className="h-20 sm:h-28 md:h-36 lg:h-44 w-auto drop-shadow-lg"
+          />
+        </div>
 
         <p
           ref={subRef}
