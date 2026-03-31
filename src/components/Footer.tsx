@@ -9,9 +9,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <span className="font-[family-name:var(--font-heading)] text-3xl italic text-white">
-              Mlsná holka
-            </span>
+            <img
+              src="/images/logo-white.png"
+              alt="Mlsná holka"
+              className="h-10"
+            />
             <p className="mt-4 text-white/50 text-sm leading-relaxed">
               Prémiové dorty na zakázku, makronky a mini donuty.
               Pečeme s láskou v Brně od roku 2017.
