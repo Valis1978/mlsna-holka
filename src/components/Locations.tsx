@@ -13,7 +13,7 @@ const LOCATIONS = [
       { days: "So — Ne", time: "9:00 — 17:00" },
     ],
     features: ["Snídaně & Brunch", "Posezení v kavárně", "Plný sortiment"],
-    image: "/images/brunch-interior.jpg",
+    image: "/images/storefront.jpg",
     mapUrl: "https://maps.google.com/?q=Poštovská+1,+Brno",
   },
   {
@@ -27,7 +27,7 @@ const LOCATIONS = [
       { days: "So — Ne", time: "13:00 — 18:00" },
     ],
     features: ["Výdejní místo dortů", "Prodej makronek & donutů"],
-    image: "/images/cake8.jpeg",
+    image: "/images/macaron-colorful.jpg",
     mapUrl: "https://maps.google.com/?q=Fillova+1,+Brno",
   },
 ];

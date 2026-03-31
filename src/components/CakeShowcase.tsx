@@ -12,15 +12,15 @@ const CAKE_CATEGORIES = [
   },
   {
     title: "Dětské dorty",
-    description: "Veselé motivy, oblíbené postavičky a barvy, které rozzáří každou oslavu.",
-    image: "/images/cake4.jpeg",
+    description: "Veselé motivy, oblíbené postavičky a barvy, které rozzáří každou dětskou oslavu.",
+    image: "/images/detsky-dort.jpeg",
     price: "od 1 990 Kč",
   },
   {
-    title: "Pavlova dorty",
-    description: "Křehká pusinková báze, nadýchaný krém a čerstvé ovoce. Lehkost v každém soustu.",
-    image: "/images/cake3.jpeg",
-    price: "od 1 990 Kč",
+    title: "Svatební dorty",
+    description: "Od klasické elegance po odvážné kompozice. Součástí může být i kompletní sweet bar s makronkami.",
+    image: "/images/wedding1.jpeg",
+    price: "od 4 900 Kč",
   },
   {
     title: "Makronkové dorty",
