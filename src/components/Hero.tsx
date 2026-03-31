@@ -26,8 +26,8 @@ export default function Hero() {
           className="absolute inset-0 bg-no-repeat"
           style={{
             backgroundImage: `url('/images/hero.jpg')`,
-            backgroundSize: "110%",
-            backgroundPosition: "center 30%",
+            backgroundSize: "130%",
+            backgroundPosition: "center 55%",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/55" />
