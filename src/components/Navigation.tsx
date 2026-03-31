@@ -29,7 +29,7 @@ export default function Navigation() {
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "top-0 glass border-b border-gold-light/30 shadow-sm py-3"
-            : "top-[36px] bg-transparent py-5"
+            : "top-[30px] bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
