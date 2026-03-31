@@ -6,19 +6,19 @@ const PRODUCTS = [
   {
     name: "Makronky",
     desc: "Bezlepkové, z prvotřídních surovin. Slaný karamel, pistácie, hruška & gorgonzola i parmezan & yuzu. Od 45 Kč/ks.",
-    image: "/images/macaron-colorful.jpg",
+    image: "/images/macaron-detail.jpg",
     tag: "Bestseller",
   },
   {
     name: "Mini donuty",
     desc: "To, čím to celé začalo. 16 ingrediencí v těstě, menu se mění denně. Od 75 Kč/ks, min. 12 ks.",
-    image: "/images/donut1.jpeg",
+    image: "/images/mini-donuty-box.jpg",
     tag: "Vlajková loď",
   },
   {
     name: "Sweet bar & dezerty",
     desc: "Brownies, éclairs, větrníky, cake pops, tartaletky, panna cotta i dezerty ve skleničce. Kompletní sladký servis.",
-    image: "/images/sweetbar1.jpeg",
+    image: "/images/sweetbar-eclair.jpg",
     tag: "Eventy",
   },
   {

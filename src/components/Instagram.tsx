@@ -3,12 +3,12 @@
 import { useInView } from "@/hooks/useInView";
 
 const INSTAGRAM_IMAGES = [
-  "/images/macaron-box.jpg",
+  "/images/sweetbar-vetrnik.jpg",
   "/images/cake1.jpeg",
-  "/images/brunch-interior.jpg",
+  "/images/mini-donuty-box.jpg",
   "/images/wedding3.jpeg",
   "/images/macaron-colorful.jpg",
-  "/images/sweetbar1.jpeg",
+  "/images/brunch-interior.jpg",
 ];
 
 export default function Instagram() {
