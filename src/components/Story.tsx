@@ -21,8 +21,8 @@ export default function Story() {
           <div className={`relative ${isVisible ? "animate-slide-left delay-200" : "will-animate"}`}>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden img-zoom">
               <img
-                src="/images/hero.jpg"
-                alt="Hanka a Klaudie — zakladatelky Mlsné holky"
+                src="/images/storefront.jpg"
+                alt="Hanka před pobočkou Mlsné holky na Poštovské"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -52,24 +52,36 @@ export default function Story() {
             <div className="space-y-6 text-warm-gray leading-relaxed text-[17px]">
               <p>
                 <span className="font-[family-name:var(--font-heading)] text-2xl text-charcoal block mb-3">
-                  Chtěla být zubařkou. Stala se cukrářkou.
+                  Splněný sen, který se stal skutečností.
                 </span>
-                Hanka Pokorná zprvu studovala medicínu. Po chirurgické stáži v Thajsku si ale
-                uvědomila, že ji tato cesta nenaplňuje tak, jako její kolegy. Rozhodla se riskovat
-                a vsadit na to, co ji opravdu bavilo — pečení.
+                Jsme Hanka a Klaudie. Příběh Mlsné holky začal na střední škole, kdy Hanku
+                fascinovalo pečení dortů a snila o vlastní cukrárně. Nebyla si ale jistá, jestli
+                je to ta správná cesta — a tak nastoupila na lékařskou fakultu. Zlom přišel
+                během zahraniční stáže na chirurgii, kde pochopila, že medicína není její posláním.
+                Sebrala odvahu a rozhodla se jít za svým snem.
               </p>
               <p>
-                V roce 2017 otevřela na 17 m² v centru Brna <strong className="text-plum">první donut shop ve městě</strong>.
-                Na účtu měla 30 korun, suroviny nakoupila jen na jeden den. Jeden post na Facebooku
-                stačil — a hned první den stála fronta. Všechno vyprodala a musela péct další várku.
+                Začátky byly skromné — od prvních donutů na{" "}
+                <strong className="text-plum">17 m² v centru Brna</strong>,
+                přes které si k nám našli cestu první zákazníci. Hanka tehdy dělala úplně všechno
+                sama. Postupně přibyly makronky, éclairs, dorty a další dezerty.
               </p>
               <p>
-                Dnes Mlsnou holku tvoří <strong className="text-plum">12 žen</strong>, z nichž jen
-                jedna je vyučená cukrářka. Ostatní, stejně jako Hanka, přišly z jiných oborů —
-                spojuje je vášeň pro řemeslo a nebojácnost zkoušet neobvyklé kombinace chutí.
-                Výsledkem je třeba makronka s gorgonzolou a hruškou nebo s parmezánem a yuzu.
+                Dnes za Mlsnou holkou stojí <strong className="text-plum">silný tým šikovných holek</strong>,
+                které prošly řadou kurzů a stáží v Česku i v zahraničí. Každé tři měsíce měníme
+                dezertní menu, vymýšlíme nové kombinace chutí i vzhledů a snažíme se jít vlastní,
+                originální cestou. V roce 2024 jsme otevřely druhou pobočku a na centru spustily
+                snídaně a brunche.
               </p>
             </div>
+
+            {/* Quote */}
+            <blockquote className="mt-8 pl-5 border-l-2 border-gold-light/50">
+              <p className="text-charcoal italic text-[16px]">
+                P.S.: Plňte si své sny. 💛
+              </p>
+              <cite className="text-warm-gray text-sm not-italic mt-2 block">— Hanka & Klaudie</cite>
+            </blockquote>
 
             {/* Media mentions */}
             <div className="mt-8 flex flex-wrap gap-3">
