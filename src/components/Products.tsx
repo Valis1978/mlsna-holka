@@ -12,13 +12,13 @@ const PRODUCTS = [
   {
     name: "Mini donuty",
     desc: "To, čím to celé začalo. 16 ingrediencí v těstě, menu se mění denně. Od 75 Kč/ks, min. 12 ks.",
-    image: "/images/macaron-box.jpg",
+    image: "/images/donut1.jpeg",
     tag: "Vlajková loď",
   },
   {
     name: "Sweet bar & dezerty",
     desc: "Brownies, éclairs, větrníky, cake pops, tartaletky, panna cotta i dezerty ve skleničce. Kompletní sladký servis.",
-    image: "/images/macaron-tray.jpg",
+    image: "/images/sweetbar1.jpeg",
     tag: "Eventy",
   },
   {
