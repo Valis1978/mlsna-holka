@@ -23,12 +23,14 @@ export default function Hero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-no-repeat"
           style={{
             backgroundImage: `url('/images/hero.jpg')`,
+            backgroundSize: "110%",
+            backgroundPosition: "center 30%",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/55" />
       </div>
 
       {/* Decorative circles */}
@@ -50,16 +52,13 @@ export default function Hero() {
           </span>
         </div>
 
-        <div
+        <h1
           ref={headingRef}
-          className="will-animate mb-6 flex justify-center"
+          className="will-animate font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95] mb-6 drop-shadow-lg"
         >
-          <img
-            src="/images/logo-white.png"
-            alt="Mlsná holka"
-            className="h-20 sm:h-28 md:h-36 lg:h-44 w-auto drop-shadow-lg"
-          />
-        </div>
+          Mlsná{" "}
+          <span className="italic text-gold-light">holka</span>
+        </h1>
 
         <p
           ref={subRef}
