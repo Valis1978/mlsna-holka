@@ -8,6 +8,7 @@ import Weddings from "@/components/Weddings";
 import CorporateClients from "@/components/CorporateClients";
 import Brunch from "@/components/Brunch";
 import Pricing from "@/components/Pricing";
+import OrderForm from "@/components/OrderForm";
 import Locations from "@/components/Locations";
 import Instagram from "@/components/Instagram";
 import InfoBanner from "@/components/InfoBanner";
@@ -33,6 +34,7 @@ export default function Home() {
       <CorporateClients />
       <Brunch />
       <Pricing />
+      <OrderForm />
       <Locations />
       <Instagram />
       <Footer />

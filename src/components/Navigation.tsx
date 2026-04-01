@@ -38,7 +38,7 @@ export default function Navigation() {
             <img
               src="/images/logo-white.png"
               alt="Mlsná holka"
-              className={`h-8 md:h-10 transition-all duration-500 ${
+              className={`h-6 sm:h-8 md:h-10 transition-all duration-500 ${
                 scrolled
                   ? "brightness-0 opacity-80"
                   : ""
