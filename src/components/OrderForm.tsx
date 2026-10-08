@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
-import { Send, CheckCircle } from "lucide-react";
+import { Send } from "lucide-react";
 
 const SIZES = [
   { label: "ø 20 cm (cca 12 porcí)", value: "20cm" },
@@ -35,23 +35,8 @@ const PICKUP = [
 
 export default function OrderForm() {
   const { ref, isVisible } = useInView();
-  const [submitted, setSubmitted] = useState(false);
+  const [draftHref, setDraftHref] = useState('');
 
-  if (submitted) {
-    return (
-      <section className="py-24 md:py-32 bg-cream">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <CheckCircle size={48} className="text-plum mx-auto mb-6" />
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-charcoal">
-            Děkujeme za objednávku!
-          </h2>
-          <p className="text-warm-gray mt-4">
-            Ozveme se vám co nejdříve s potvrzením. Obvykle do 1–2 pracovních dnů.
-          </p>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="formular" className="py-24 md:py-32 bg-white">
@@ -88,30 +73,31 @@ export default function OrderForm() {
               `Poznámky: ${data.get("notes")}`,
             ].join("\n");
 
-            window.location.href = `mailto:dorty@mlsna-holka.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            setSubmitted(true);
+            const href = `mailto:dorty@mlsna-holka.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            setDraftHref(href);
+            window.location.href = href;
           }}
           className={`space-y-6 ${isVisible ? "animate-fade-in-up delay-200" : "will-animate"}`}
         >
           {/* Personal info */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-name" className="block text-charcoal text-sm font-medium mb-1.5">
                 Jméno a příjmení *
               </label>
               <input
-                name="name"
+                id="mlsna-name" name="name"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
                 placeholder="Jana Nováková"
               />
             </div>
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-email" className="block text-charcoal text-sm font-medium mb-1.5">
                 E-mail *
               </label>
               <input
-                name="email"
+                id="mlsna-email" name="email"
                 type="email"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
@@ -122,22 +108,22 @@ export default function OrderForm() {
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-phone" className="block text-charcoal text-sm font-medium mb-1.5">
                 Telefon
               </label>
               <input
-                name="phone"
+                id="mlsna-phone" name="phone"
                 type="tel"
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
                 placeholder="+420 ..."
               />
             </div>
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-date" className="block text-charcoal text-sm font-medium mb-1.5">
                 Datum vyzvednutí *
               </label>
               <input
-                name="date"
+                id="mlsna-date" name="date"
                 type="date"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
@@ -147,11 +133,11 @@ export default function OrderForm() {
 
           {/* Pickup location */}
           <div>
-            <label className="block text-charcoal text-sm font-medium mb-1.5">
+            <label htmlFor="mlsna-pickup" className="block text-charcoal text-sm font-medium mb-1.5">
               Místo vyzvednutí *
             </label>
             <select
-              name="pickup"
+              id="mlsna-pickup" name="pickup"
               required
               className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
             >
@@ -165,11 +151,11 @@ export default function OrderForm() {
           {/* Cake details */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-size" className="block text-charcoal text-sm font-medium mb-1.5">
                 Velikost dortu *
               </label>
               <select
-                name="size"
+                id="mlsna-size" name="size"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
               >
@@ -180,11 +166,11 @@ export default function OrderForm() {
               </select>
             </div>
             <div>
-              <label className="block text-charcoal text-sm font-medium mb-1.5">
+              <label htmlFor="mlsna-flavor" className="block text-charcoal text-sm font-medium mb-1.5">
                 Příchut *
               </label>
               <select
-                name="flavor"
+                id="mlsna-flavor" name="flavor"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
               >
@@ -198,11 +184,11 @@ export default function OrderForm() {
 
           {/* Occasion */}
           <div>
-            <label className="block text-charcoal text-sm font-medium mb-1.5">
+            <label htmlFor="mlsna-occasion" className="block text-charcoal text-sm font-medium mb-1.5">
               Pro koho dort bude? Příležitost? *
             </label>
             <input
-              name="occasion"
+              id="mlsna-occasion" name="occasion"
               required
               className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal"
               placeholder="Narozeniny Petr, 30 let — jméno a věk na dort"
@@ -211,11 +197,11 @@ export default function OrderForm() {
 
           {/* Notes */}
           <div>
-            <label className="block text-charcoal text-sm font-medium mb-1.5">
+            <label htmlFor="mlsna-notes" className="block text-charcoal text-sm font-medium mb-1.5">
               Poznámky k objednávce
             </label>
             <textarea
-              name="notes"
+              id="mlsna-notes" name="notes"
               rows={3}
               className="w-full px-4 py-3 rounded-xl border border-gold-light/30 bg-cream focus:border-plum focus:ring-1 focus:ring-plum/20 outline-none transition-colors text-charcoal resize-none"
               placeholder="Speciální přání, barvy, inspirace, alergie..."
@@ -231,8 +217,13 @@ export default function OrderForm() {
             className="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-4 bg-plum text-white text-sm uppercase tracking-[0.15em] rounded-full hover:bg-plum-light transition-all duration-300 hover:shadow-lg hover:shadow-plum/25 mx-auto"
           >
             <Send size={16} />
-            Odeslat objednávku
+            Připravit e-mail s objednávkou
           </button>
+          <p className="text-warm-gray text-sm">Otevře se váš e-mailový program. Objednávku odešlete až v něm.</p>
+          {draftHref && <p role="status" className="text-charcoal text-sm">
+            Objednávka je připravená, zatím není odeslaná.{' '}
+            <a href={draftHref} className="underline">Otevřít připravený e-mail</a>. Údaje můžete dál upravit.
+          </p>}
         </form>
       </div>
     </section>
