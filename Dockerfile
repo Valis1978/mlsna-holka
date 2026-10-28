@@ -1,4 +1,7 @@
-FROM node:20-alpine AS base
+# Node.js 20 is end-of-life (30 Apr 2026) and has no fix for the Brotli RCE
+# (CVE-2026-111497, fixed in 22.23.4 and 24.22.1). The floating 24 tag picks up
+# Node.js security releases on every rebuild.
+FROM node:24-alpine AS base
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
